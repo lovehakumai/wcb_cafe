@@ -1,0 +1,428 @@
+@charset "UTF-8";
+/* Google Fonts */
+.philosopher-regular {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* 共通部分 */
+html {
+  font-size: 100%;
+}
+body {
+  /* sans-serif : サンセリフ体。装飾がつかない書体 */
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+  line-height: 1.7;
+  color: #432;
+}
+a { 
+  /* aタグの下線を指定する */
+  text-decoration: none;
+}
+img {
+  /* 画像が親要素よりも大きくなることを防ぐ */
+  max-width: 100%; 
+}
+
+/* レイアウト */
+.wrapper {
+  max-width: 1120px;
+  /* ボックスを画面中央にする */
+  margin: auto;
+  padding: 0 1.5rem;
+}
+.align-center {
+  text-align: center;
+}
+
+/* 見出し */
+.font-english {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: normal;
+}
+.page-title,
+.heading-large,
+.heading-medium {
+  font-size: 3rem;
+  text-align: center;
+}
+.page-title {
+    /* rem : htmlタグのfont-sizeからの相対的なサイズ。1rem = 16px */
+    margin-top: 2rem;
+    line-height: 1.4;
+}
+.heading-large {
+  margin-bottom: 1rem;
+}
+
+/* header */
+.page-header {
+  /* .5remは少数の省略型。0.5remを指している */
+  padding-top: .5rem;
+}
+.logo {
+  width: 210px;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.main-nav a {
+  color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+.cover {
+  /* 背景画像が要素の縦横比を保持しながら、要素のどちらか一方の辺（縦または横）に完全にフィットするように拡大または縮小されます。 */
+  background-size: cover;
+  /* 背景画像の中心が水平方向の中心に、垂直方向の下部に配置されます */
+  background-position: center bottom;
+  height: 800px;
+}
+.sub-cover {
+    background-size: cover;
+    background-position: center bottom;
+    height: 400px;
+    margin-bottom: 6rem;
+}
+
+.cover-home {
+  /* ch4/cssからブラウザがファイルを探しているので一階層上に戻り、imagesdirにアクセス */
+  background-image: url(../images/cover-home-s.webp);
+}
+
+.about {
+  max-width: 736px;
+  /* padding : 上下が0, 左右が1.5rem */
+  padding: 0 1.5rem;
+  /* margin : 上が3rem, 下が4rem, 左右がauto */
+  margin: 3rem auto 4rem;
+}
+.about p {
+    margin-bottom: 3rem;
+}
+
+/* NEWS */
+.cover-news {
+    background-image: url(../images/cover-news-s.webp);
+}
+/* POST */
+.post {
+    margin: 3rem;
+}
+.post-title {
+    font-weight: normal;
+    margin-bottom: 1.25rem;
+}
+.post-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.post-date {
+    font-size: .875rem;
+}
+.post-cat {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+}
+.post-cat a {
+    color: #432;
+    background-color: #faf7f0;
+    border-radius: 8px;
+    font-size: .875rem;
+    padding: .5rem .75rem;
+    transition: 0.5s;
+}
+.post-cat a:hover {
+    background-color: #c9c2bc;
+}
+.post-thumbnail {
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+.post p {
+    margin-bottom: 1.5rem;
+    line-height: 2;
+}
+
+/* MENU */
+.cover-menu {
+    background-image: url(../images/cover-menu-s.webp);
+}
+.grid {
+    display: grid;
+    gap: 2rem 1.5rem;
+    /* 列数を指定するプロパティ : 1fr, 1frのように同じものが連続する場合はrepeat(繰り返す数, 要素の幅)を使える */
+    /* frは要素の割合を示す。pxではないのでディスプレイの大きさに準じてサイズが変わる 1fr 1fr 1frは1:1:1の幅を指す */
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+}
+.item img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.item p {
+    font-size: .875rem;
+}
+.item-big {
+    /* グリッド内での大きさの指定　始まりのライン/終わりのライン */
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+/* Contact */
+.cover-contact {
+  background-image: url(../images/cover-contact-s.webp);
+}
+.location {
+  margin-bottom: 3.5rem;
+}
+.location-info {
+  margin-bottom: 2rem;
+}
+.location-info .info {
+  padding: 0;
+}
+.location-map {
+  display: flex;
+  justify-content: center;
+}
+
+/* お問い合わせ */
+.email {
+  max-width: 916px;
+  background-color: #faf7f0;
+  border-radius: 48px;
+  /* 上（1.5rem）、右（2.5rem）、左（2.5rem）、下（2.5rem） */
+  padding: 1.5rem 2.5rem 2.5rem;
+  /* 上（0）、左右（auto）、下（2rem） */
+  margin: 0 auto 2rem;
+}
+.email p {
+  margin: 1rem 0 2rem;
+}
+
+/* Side bar */
+.side-menu {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.side-menu li {
+    border-bottom: 1px solid #c9c2bc;
+}
+.side-menu a {
+    color: #432;
+    /* リスト項目の横幅いっぱいまでクリックできる */
+    display: block;
+    padding: 1rem;
+}
+/* button */
+.btn {
+  /* 余白を含めたサイズを認識させるため記述 */
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: #0bd;
+  color: #fff;
+  border-radius: 8px;
+  padding: .75rem 1.5rem;
+  transition: .5s;
+}
+.btn:hover {
+  background-color: #0090aa;
+  /* 拡大率を指定, 値1つで全体の倍率, 2つでそれぞれ上下左右の倍率 */
+  scale: 1.2;
+  /* 回転率を指定, 360degで1週,  */
+  rotate: 1.5deg;
+  /* 移動させる, 正が右 */
+  translate: 10px;
+}
+
+/* iframe */
+.iframe {
+  width: 100%;
+}
+
+/* SNS */
+.sns-item {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* flexはデフォルトで左揃えなので中央にしていく */
+  /* 水平方向 */
+  justify-content: center; 
+  /* 垂直方向 */
+  align-items: center;
+}
+.sns-item .heading-medium {
+  margin-bottom: .5rem;
+}
+.sns-youtube {
+  aspect-ratio: 16/9;
+}
+.sns-youtube .iframe {
+  height: 100%;
+}
+
+/* Footer */
+.page-footer {
+  background-image: url(../images/footer-s.webp);
+  /* 画面いっぱいの指定 */
+  background-size: cover;
+  background-position: center;
+  padding-top: 12rem;
+}
+.info {
+  width: 100%;
+  max-width: 544px;
+  margin: auto;
+  padding: 0 1.5rem;
+  /* 1行ごとに1本の線を引く指定 */
+  border-spacing: 0;
+}
+
+.info th,
+.info td {
+  border-bottom: 1px solid #c9c2bc;
+}
+.info th{
+  text-align: left;
+  font-weight: normal;
+  padding: 1rem;
+}
+.info td {
+  padding: 1rem 0;
+}
+
+.copyright {
+  background-color: #432;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 6rem;
+  color: #fff;
+}
+
+/* Desktop(800px ~ ) */
+@media (min-width: 800px) {
+  /* 見出し */
+  .page-title {
+    font-size: 5rem;
+  }
+  .heading-large {
+    font-size: 4rem;
+  }
+  .post-title {
+    font-size: 2rem;
+  }
+  
+  /* header */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+  }
+  .main-nav {
+    font-size: 2rem;
+  }
+
+  /* HOME */
+  .cover-home {
+    background-image: url(../images/cover-home-l.webp);
+  }
+  .about {
+    margin: 4rem auto 0;
+  }
+
+  /* NEWS */
+  .cover-news {
+    background-image: url(../images/cover-news-l.webp);
+  }
+  .news-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+  .post {
+    width: 70%;
+    order: 2;
+  }
+  .sidebar {
+    width: 22%;
+    order: 3;
+  }
+  .sidebar .heading-medium {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .ad {
+    order: 1;
+  }
+
+  /* Footer */
+  .page-footer {
+    background-image: url(../images/footer-l.webp);
+    padding-top: 12rem;
+  }
+  .info th {
+    padding-left: 2.5rem;
+  }
+  /* MENU */
+  .cover-menu {
+    background-image: url(../images/cover-menu-l.webp);
+  }
+  .grid {
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(3,1fr);
+  }
+  .item img {
+    margin-bottom: .5rem;
+  }
+  .item p {
+    font-size: 1rem;
+  }
+  .item-big img {
+    /* 他の小さい画像との縦幅と横幅を微調整していく */
+    height: 94.5%;
+    width: 100%;
+  }
+  /* Contact */
+  .cover-contact {
+    background-image: url(../images/cover-contact-l.webp);
+  }
+  /* Map */
+  .location {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .location-info {
+    width: 32%;
+  }
+  .location-info .info th {
+    padding-left: 2rem;
+  }
+  .location-map {
+    width: 64%;
+  }
+  .email {
+    margin-bottom: 4rem;
+  }
+  .sns {
+    display: flex;
+    /* 上揃えにする機能 */
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 0;
+  }
+  .sns-item {
+    /* 小要素の中の比率(Youtube, Instaで1:1になる) */
+    flex: 1;
+  }
+}
